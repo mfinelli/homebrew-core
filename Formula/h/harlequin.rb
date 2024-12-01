@@ -18,6 +18,7 @@ class Harlequin < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "mysql" => :build # mysql-connector-python
   depends_on "ninja" => :build
   depends_on "apache-arrow"
   depends_on "python@3.11"
@@ -44,6 +45,11 @@ class Harlequin < Formula
   resource "duckdb" do
     url "https://files.pythonhosted.org/packages/a0/d7/ec014b351b6bb026d5f473b1d0ec6bd6ba40786b9abbf530b4c9041d9895/duckdb-1.1.3.tar.gz"
     sha256 "68c3a46ab08836fe041d15dcbf838f74a990d551db47cb24ab1c4576fc19351c"
+  end
+
+  resource "harlequin-mysql" do
+    url "https://files.pythonhosted.org/packages/80/fd/410c3a6f6c1d0358359c58a3c36b0ac3519a1da8d0e7f0424f1a00f8bfcc/harlequin_mysql-0.3.0.tar.gz"
+    sha256 "46ef42c5b658568f5340ee53c241cb1333f3e04914807c1f83741e83517878b3"
   end
 
   resource "Jinja2" do
@@ -74,6 +80,11 @@ class Harlequin < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "mysql-connector-python" do
+    url "https://files.pythonhosted.org/packages/78/b6/a6ee4697f95e4bc6f402dd12872ed467d5a1b2f4589079e5966ccb10a2fd/mysql-connector-python-8.4.0.tar.gz"
+    sha256 "42542d131d63c78416d410fdc9e84b9acb960d715c2e7b28c57ac9577c6d8165"
   end
 
   resource "numpy" do
